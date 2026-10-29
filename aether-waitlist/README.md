@@ -30,7 +30,7 @@ Create a Personal Access Token limited to this waitlist base with record read/wr
 1. Add the contents of this folder to the Vercel project that will serve the landing page. The project root should contain `index.html` and `api/waitlist.js`.
 2. In Vercel project settings, add `AIRTABLE_TOKEN`, `AIRTABLE_WAITLIST_BASE_ID`, and `AIRTABLE_WAITLIST_TABLE_ID` as environment variables. Use the write token and the new waitlist base/table IDs.
 3. Deploy the project. The form posts to the same-origin `/api/waitlist` endpoint.
-4. Before sharing the page, add the business's privacy-policy URL and confirm the terms for how long waitlist contact details are kept.
+4. The signup form links to `privacy.html` and uses the retention terms shown there. Review the policy against your actual practices before sharing the page.
 
 Never put an Airtable token in `index.html` or other browser code.
 
@@ -45,4 +45,14 @@ The dashboard is bound to `127.0.0.1` and is not exposed to the public internet.
 
 ## Before it can accept public signups
 
-The Vercel environment variables, separate Airtable table, and deployment must be configured. The workspace does not include an authenticated Vercel project or Airtable connection, so this folder is deployment-ready code rather than a live deployment.
+The Vercel environment variables, separate Airtable table, and deployment must be configured. The workspace contains the page and function source, but it is not yet linked to a Vercel project. Add this folder to the correct project and deploy after the environment variables are configured.
+
+## Privacy and launch checks
+
+- The public policy is `privacy.html`; review that it matches the live form, hosting, storage, and contact practices before deployment.
+- The policy now uses the retention rule selected for AETHER AI: keep entries while the waitlist is active, review the active status at least annually, and delete or anonymize entries within 90 days after closing it (subject to the stated exceptions). Set a calendar reminder and follow this schedule in Airtable.
+- AETHER AI operates from Nigeria and the waitlist is intended for U.S. brokers. Before live submissions, identify and document the applicable lawful transfer basis and safeguards for each international transfer under Nigeria's Data Protection Act, including the Airtable and Vercel account terms. Do not assume a provider's DPA is executed or applicable; confirm this from the actual account and plan.
+- Confirm whether “AETHER AI” is the controller's legal identity or only a trade name. If there is a registered owner/entity name, update the privacy notice to name it alongside the brand.
+- Keep the waitlist limited to broker contact details. Any future borrower-data processing needs separate product privacy terms, documented workflows, and a review of applicable financial/privacy obligations.
+- The policy is a working notice, not a legal opinion or a certification of compliance. Have counsel or a Nigeria data-protection professional review it before public launch, particularly the cross-border transfer basis and any Texas-law applicability.
+
